@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/newsHomeFragment">
+
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.abdallah.ehab.newyorktimesnews.features.moviesReviews.ui.view.NewsDetailsFragment"
+        android:label="fragment_news_details"
+        tools:layout="@layout/fragment_news_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.abdallah.ehab.newyorktimesnews.features.moviesReviews.data.models.CriticMovie" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsHomeFragment"
+        android:name="com.abdallah.ehab.newyorktimesnews.features.moviesReviews.ui.view.NewsHomeFragment"
+        android:label="fragment_news_home"
+        tools:layout="@layout/fragment_news_home" >
+        <action
+            android:id="@+id/action_newsHomeFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+</navigation>

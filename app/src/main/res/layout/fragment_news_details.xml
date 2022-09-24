@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieReview"
+            type="com.abdallah.ehab.newyorktimesnews.features.moviesReviews.data.models.CriticMovie" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/detailed_news_scroll_view"
+        style="@style/roundedImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTintMode="screen"
+        tools:context=".features.moviesReviews.ui.view.NewsDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailed_news_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/detailed_news_img"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="@dimen/_200dp"
+                android:layout_marginTop="@dimen/_48dp"
+                android:contentDescription="@string/detailed_news_image"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{movieReview.multimedia.src}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+            <TextView
+                android:id="@+id/detailed_news_title_label_txt_v"
+                style="@style/DetailedNewsLabelText"
+                android:text="@string/detailed_news_title_label_txt"
+                app:layout_constraintBottom_toBottomOf="@id/detailed_news_title_content_txt"
+                app:layout_constraintEnd_toStartOf="@id/detailed_news_title_content_txt"
+                app:layout_constraintTop_toTopOf="@id/detailed_news_title_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_published_by_label_txt_v"
+                style="@style/DetailedNewsLabelText"
+                android:text="@string/detailed_news_published_by_label_txt"
+                app:layout_constraintBottom_toBottomOf="@+id/detailed_news_publish_by_content_txt"
+                app:layout_constraintEnd_toStartOf="@id/detailed_news_publish_by_content_txt"
+                app:layout_constraintTop_toTopOf="@+id/detailed_news_publish_by_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_rate_label_txt_v"
+                style="@style/DetailedNewsLabelText"
+                android:text="@string/detailed_news_rate_label_txt"
+                app:layout_constraintBottom_toBottomOf="@+id/detailed_news_rating_content_txt"
+                app:layout_constraintEnd_toStartOf="@id/detailed_news_rating_content_txt"
+                app:layout_constraintTop_toTopOf="@+id/detailed_news_rating_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_summary_label_txt_v"
+                style="@style/DetailedNewsLabelText"
+                android:text="@string/detailed_news_summary_label_txt_v"
+                app:layout_constraintBottom_toBottomOf="@+id/detailed_news_date_content_txt"
+                app:layout_constraintEnd_toStartOf="@id/detailed_news_date_content_txt"
+                app:layout_constraintTop_toTopOf="@+id/detailed_news_date_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_date_label_txt_v"
+                style="@style/DetailedNewsLabelText"
+                android:text="@string/detailed_news_date_label_txt"
+                app:layout_constraintBottom_toBottomOf="@+id/detailed_news_summary_content_txt"
+                app:layout_constraintEnd_toStartOf="@id/detailed_news_summary_content_txt"
+                app:layout_constraintTop_toTopOf="@+id/detailed_news_summary_content_txt" />
+
+
+            <TextView
+                android:id="@+id/detailed_news_title_content_txt"
+                style="@style/DetailedNewsContentText"
+                android:text="@{movieReview.display_title}"
+                app:layout_constraintStart_toEndOf="@+id/detailed_news_title_label_txt_v"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_news_img" />
+
+            <TextView
+                android:id="@+id/detailed_news_publish_by_content_txt"
+                style="@style/DetailedNewsContentText"
+                android:text="@{movieReview.byline}"
+                app:layout_constraintStart_toEndOf="@+id/detailed_news_published_by_label_txt_v"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_news_title_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_rating_content_txt"
+                style="@style/DetailedNewsContentText"
+                android:text="@{movieReview.mpaa_rating}"
+                app:layout_constraintStart_toEndOf="@+id/detailed_news_rate_label_txt_v"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_news_publish_by_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_date_content_txt"
+                style="@style/DetailedNewsContentText"
+                android:text="@{movieReview.summary_short}"
+                app:layout_constraintStart_toEndOf="@+id/detailed_news_summary_label_txt_v"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_news_rating_content_txt" />
+
+            <TextView
+                android:id="@+id/detailed_news_summary_content_txt"
+                style="@style/DetailedNewsContentText"
+                app:fromStringDate="@{movieReview.date_updated}"
+                android:layout_marginBottom="@dimen/_12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/detailed_news_date_label_txt_v"
+                app:layout_constraintTop_toBottomOf="@+id/detailed_news_date_content_txt" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+

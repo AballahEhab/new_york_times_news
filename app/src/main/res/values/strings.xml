@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">New York Times News</string>
+    <string name="detailed_news_title_label_txt">Title</string>
+    <string name="detailed_news_published_by_label_txt">Publish By</string>
+    <string name="detailed_news_rate_label_txt">Rating</string>
+    <string name="detailed_news_summary_label_txt_v">Summary</string>
+    <string name="detailed_news_date_label_txt">Date</string>
+    <string name="detailed_news_image">detailed news image</string>
+    <string name="news_overview_type_unknown_txt">Un Known</string>
+    <string name="news_overview_image_txt">news overview image</string>
+</resources>
